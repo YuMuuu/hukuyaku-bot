@@ -13,6 +13,8 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "com.jagrosh" % "jda-utilities" % "3.0.4" pomOnly(),
   "net.dv8tion" % "JDA" % "4.2.0_197",
+  "com.softwaremill.macwire" %% "macros" % "2.3.7" % "provided",
+  "com.github.pureconfig" %% "pureconfig" % "0.14.0",
 )
 
 
