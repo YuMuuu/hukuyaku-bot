@@ -17,4 +17,5 @@ libraryDependencies ++= Seq(
   "com.github.pureconfig" %% "pureconfig" % "0.14.0",
 )
 
+enablePlugins(JavaAppPackaging)
 

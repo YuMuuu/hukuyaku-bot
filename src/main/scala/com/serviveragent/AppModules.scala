@@ -25,7 +25,7 @@ trait AppModules {
   lazy val hukuyakuUseCase: HukuyakuUseCase = wire[HukuyakuUseCase]
 
   lazy val helloCommand: Command = wire[HelloCommand]
-  lazy val hukuyakuComand: Command = wire[HukuyakuCommand]
+  lazy val hukuyakuCommand: Command = wire[HukuyakuCommand]
 
 
   lazy val commandClient: CommandClient = new CommandClientBuilder()
@@ -34,7 +34,7 @@ trait AppModules {
     .setOwnerId(ownerId)
 
     .addCommand(helloCommand)
-    .addCommand(hukuyakuComand)
+    .addCommand(hukuyakuCommand)
     .build()
 
   lazy val jda: JDA = new JDABuilder(AccountType.BOT)
