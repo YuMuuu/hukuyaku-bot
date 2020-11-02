@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/hukuyaku-bot
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/*.jar
