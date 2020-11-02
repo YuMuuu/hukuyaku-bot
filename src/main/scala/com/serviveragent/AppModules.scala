@@ -28,7 +28,7 @@ trait AppModules {
   lazy val hukuyakuCommand: Command = wire[HukuyakuCommand]
 
 
-  lazy val commandClient: CommandClient = new CommandClientBuilder()
+  val commandClient: CommandClient = new CommandClientBuilder()
     .setStatus(OnlineStatus.ONLINE)
     .setActivity(activity)
     .setOwnerId(ownerId)
@@ -37,9 +37,8 @@ trait AppModules {
     .addCommand(hukuyakuCommand)
     .build()
 
-  lazy val jda: JDA = new JDABuilder(AccountType.BOT)
+  val jda: JDA = new JDABuilder(AccountType.BOT)
     .setToken(token)
     .addEventListeners(commandClient)
     .build()
-
 }

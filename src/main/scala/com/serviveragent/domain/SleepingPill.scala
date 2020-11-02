@@ -8,7 +8,7 @@ sealed trait SleepingPill {
   val TMax: Int
 }
 //ゾルピデム（Zolpidem）
-case class Zolpidem() extends SleepingPill {
+final case class Zolpidem() extends SleepingPill {
   val name: String = "ゾルピデム"
   val TMax: Int = 48
 }
