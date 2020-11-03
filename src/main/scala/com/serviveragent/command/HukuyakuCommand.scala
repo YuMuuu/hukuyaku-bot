@@ -5,12 +5,18 @@ import java.time.format.DateTimeFormatter
 
 import com.jagrosh.jdautilities.command.{Command, CommandEvent}
 import com.serviveragent.usecase.HukuyakuUseCase
+import com.typesafe.scalalogging.LazyLogging
 
-class HukuyakuCommand(hukuyakuUseCase: HukuyakuUseCase) extends Command {
+class HukuyakuCommand(hukuyakuUseCase: HukuyakuUseCase)
+    extends Command
+    with LazyLogging {
   this.name = "ふくやく"
   this.help = "no description"
 
   override def execute(event: CommandEvent): Unit = {
+
+    logger.info(s"from: ${event.getAuthor.getName}, command: ふくやく")
+
     val pillName = event.getArgs
 
     val maybeLocalDateTime = hukuyakuUseCase(pillName)
